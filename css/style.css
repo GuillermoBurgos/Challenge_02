@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    background:#F3F5FC;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 150%;
+}
+.header{
+    display: block;
+}
+.main{
+    display: flex;
+ 
+
+}
+
+.a{
+    position: static;
+    width: 120px;
+    height: 48px;
+    left: 0px;
+    top: 0px;
+    padding: 40px 40px 0 0 ;
+}
+
+#principal{
+    display:unset;
+}
+
+.iniciarJuego{
+
+display: flex;   
+flex-direction: row;
+align-items: flex-start;
+/*padding: 24px;*/
+gap: 8px;
+
+position: absolute;
+width: 280px;
+height: 67px;
+left: 42.7%;
+top: 500px;
+
+/* Dark blue/dark-blue-300 */
+
+background: #0A3871;
+border-radius: 24px;
+border-style: none;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 22px;
+align-items: center;
+justify-content: center;
+
+/* White */
+
+color: #FFFFFF;
+}
+
+#agregarPalabra{
+
+    box-sizing: border-box;
+
+/* Auto layout */
+
+display: flex;  
+flex-direction: row;
+align-items: flex-start;
+padding: 24px;
+gap: 8px;
+
+position: absolute;
+width: 280px;
+height: 67px;
+left: 42.7%;
+top: 580px;
+
+/* Dark blue/dark-blue-300 */
+
+border: 1px solid #0A3871;
+border-radius: 24px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+justify-content: center;
+
+/* Dark blue/dark-blue-300 */
+
+color: #0A3871;
+}
+
+#tableroJuego{
+display: none;
+position: absolute;
+left: 10%;
+}
+
+#dibujo{
+    position: absolute;
+    left: 630px;
+    top: 150px;
+    z-index: 1;
+
+}
+
+#tablero{
+    z-index: 0;
+    position: absolute;
+    left: 10%;
+}
+
+#pantallaFail{
+    display: none;
+}
+#juegoTerminado{
+    width: 400px;
+    position: absolute;
+    top: 300px;
+    left: 39.6%;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 1000;
+    font-size: 50px;
+    line-height: 120%;
+    text-align: center;
+
+}
+
+.fadeOut{
+	opacity:0;
+	transition:0.5s;
+}
+.fadeOut2{
+	opacity:0;
+	transition:2s;
+}
+.estiloGanador{
+	color:green;
+}
+
+.estiloPerdedor{
+    color: red;
+}

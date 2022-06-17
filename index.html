@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ahorcadito</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <header>
+            <img src="imagenes/Logo.png" class="a">
+        </header>
+
+        <section id="principal">
+            <button type="button" onclick="iniciarJuego()"  class="iniciarJuego">Iniciar Juego</button>
+            <button type="button" onclick="" class="boton" id="agregarPalabra">Agregar nueva palabra</button> 
+        </section>
+
+        <section id="tableroJuego">
+            <canvas width="300" height="360" id="dibujo"></canvas>
+            <canvas width="1200" height="800" id="tablero"></canvas>
+        </section>
+
+        <section id="pantallaFail">
+            <p id="juegoTerminado">JUEGO TERMINADO</p>
+            <button type="button" onclick="iniciarJuego()"  class="iniciarJuego">Reintentar</button> 
+            <button type="button" onclick="" class="boton" id="agregarPalabra">Agregar nueva palabra</button> 
+
+        </section>
+         
+    </main>
+</body>
+<script src="js/script.js"></script>
+<script src="js/muneco.js"></script>
+</html>
