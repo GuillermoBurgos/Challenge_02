@@ -12,12 +12,12 @@
 }
 .main{
     display: flex;
- 
+    justify-content: center;
 
 }
 
 .a{
-    position: static;
+    position: relative;
     width: 120px;
     height: 48px;
     left: 0px;
@@ -31,16 +31,11 @@
 
 .iniciarJuego{
 
-display: flex;   
-flex-direction: row;
-align-items: flex-start;
-/*padding: 24px;*/
-gap: 8px;
 
 position: absolute;
+/*margin-top: 400px;*/
 width: 280px;
 height: 67px;
-left: 42.7%;
 top: 500px;
 
 /* Dark blue/dark-blue-300 */
@@ -66,19 +61,15 @@ color: #FFFFFF;
 
     box-sizing: border-box;
 
-/* Auto layout */
-
-display: flex;  
-flex-direction: row;
-align-items: flex-start;
 padding: 24px;
 gap: 8px;
 
 position: absolute;
 width: 280px;
 height: 67px;
-left: 42.7%;
+
 top: 580px;
+display: block;
 
 /* Dark blue/dark-blue-300 */
 
@@ -115,16 +106,21 @@ left: 10%;
     z-index: 0;
     position: absolute;
     left: 10%;
+    top: 30px;
 }
 
 #pantallaFail{
     display: none;
+
 }
 #juegoTerminado{
-    width: 400px;
+
+    
+    margin-top: 500px;
+    width: 444px;
     position: absolute;
-    top: 300px;
-    left: 39.6%;
+    /*top: 300px;
+    left: 39.6%;*/
     font-family: 'Arial';
     font-style: normal;
     font-weight: 1000;
@@ -148,4 +144,35 @@ left: 10%;
 
 .estiloPerdedor{
     color: red;
+}
+
+#pantallaAgregarPalabra{
+    display: none;
+}
+
+.input_text{
+    margin-left: auto; 
+    margin-right: auto;
+    display: block;
+    margin-top: 250px;
+    resize: none;
+    width: 200px;
+    height: 100%;
+    color: #0A3871;
+    border-style: none;
+
+}
+
+.contenedor{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cartelito{
+    position: absolute;
+    margin-top: 600px;
+    font-size: medium;
+    color: gray;
 }

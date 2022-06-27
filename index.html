@@ -18,22 +18,40 @@
         </header>
 
         <section id="principal">
+            <div class="contenedor">
             <button type="button" onclick="iniciarJuego()"  class="iniciarJuego">Iniciar Juego</button>
-            <button type="button" onclick="" class="boton" id="agregarPalabra">Agregar nueva palabra</button> 
+            <button type="button" onclick="agregarPalabra()" class="boton" id="agregarPalabra">Agregar nueva palabra</button> 
+            </div>
+
         </section>
 
         <section id="tableroJuego">
+            <div class="contenedor">
             <canvas width="300" height="360" id="dibujo"></canvas>
             <canvas width="1200" height="800" id="tablero"></canvas>
+            </div>
+
         </section>
 
         <section id="pantallaFail">
+            <div class="contenedor">
             <p id="juegoTerminado">JUEGO TERMINADO</p>
             <button type="button" onclick="iniciarJuego()"  class="iniciarJuego">Reintentar</button> 
-            <button type="button" onclick="" class="boton" id="agregarPalabra">Agregar nueva palabra</button> 
+            <button type="button" onclick="agregarPalabra()" class="boton" id="agregarPalabra">Agregar nueva palabra</button> 
+            </div>
 
         </section>
          
+        <section id="pantallaAgregarPalabra">
+            <div class="contenedor">
+            <textarea type="text" class="input_text" placeholder="Ingrese texto" cols="30" rows="1"></textarea>
+            <button type="button" onclick="iniciarJuego()" class="iniciarJuego">Usar esta palabra</button>
+            <button type="button" onclick="volverInicio()" class="boton" id="agregarPalabra">Cancelar</button>
+            <p class="cartelito">*Máximo 8 caracteres.</p>
+        </div>
+
+
+        </section>
     </main>
 </body>
 <script src="js/script.js"></script>

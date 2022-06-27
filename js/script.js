@@ -5,11 +5,23 @@ var letras = [];
 var palabraCorrecta = "";
 var errores = 10;
 var aciertos = 0;
+var ingresoPalabra=false;
+var palabraInvalida=false;
+var palabraNueva=false;
 
 function escojerPalabraSecreta() {
-    var palabra = palabras[Math.floor(Math.random() * palabras.length)];
+
+    if(ingresoPalabra){
+        //verificarPalabraIngresada();
+        palabra=document.querySelector(".input_text").value.toUpperCase();
+    }else{
+
+
+    var palabra = palabras[Math.floor(Math.random() * palabras.length)];}
+
+
     palabraSecreta = palabra;
-    console.log(palabra);
+    //console.log(palabra);
     return palabraSecreta;
 }
 
@@ -112,11 +124,19 @@ function terminarJuego() {
 }
 
 function iniciarJuego() {
+    verificarPalabraIngresada();
+    if(palabraInvalida){
+        alert("Palabra invalida");
+    }
+    else{
+
     juegoTerminado = false;
     document.getElementById("principal").classList.add("fadeOut");
     document.getElementById("pantallaFail").classList.add("fadeOut");
     document.getElementById("tableroJuego").classList.remove("fadeOut2");
+    document.getElementById("pantallaAgregarPalabra").classList.add("fadeOut");
     setTimeout(function () {
+        document.getElementById("pantallaAgregarPalabra").style.display="none";
         document.getElementById("principal").style.display = "none";
         document.getElementById("tableroJuego").style.display = "unset";
         document.getElementById("pantallaFail").style.display = "none";
@@ -126,6 +146,7 @@ function iniciarJuego() {
     //document.getElementById("principal").style.display = "none";
     //document.getElementById("tableroJuego").style.display = "unset";
     //document.getElementById("pantallaFail").style.display = "none";
+
     escojerPalabraSecreta();
     tablero.clearRect(0, 0, 1200, 800);
     pincel.clearRect(0, 0, 300, 360);
@@ -134,6 +155,9 @@ function iniciarJuego() {
     aciertos = 0;
     letras = [];
     palabraCorrecta = "";
+    ingresoPalabra=false;
+    palabraNueva=false;
+};
 }
 
 function verificarVictoria() {
@@ -161,4 +185,56 @@ function charIsLetter(char) {
     }
 
     return char.toLowerCase() !== char.toUpperCase();
+}
+
+function agregarPalabra(){
+    palabraNueva=true;
+    document.querySelector(".input_text").value="";
+    document.getElementById("principal").classList.add("fadeOut");
+    document.getElementById("pantallaFail").classList.add("fadeOut");
+    document.getElementById("pantallaAgregarPalabra").classList.remove("fadeOut");
+    //document.getElementById("tableroJuego").classList.remove("fadeOut2");
+    setTimeout(function () {
+        document.getElementById("principal").style.display = "none";
+        document.getElementById("tableroJuego").style.display = "none";
+        document.getElementById("pantallaFail").style.display = "none";
+        document.getElementById("pantallaAgregarPalabra").style.display="unset";
+    }, 500);
+    ingresoPalabra=true;
+}
+
+function volverInicio(){
+    document.getElementById("principal").classList.remove("fadeOut");
+    document.getElementById("pantallaAgregarPalabra").classList.add("fadeOut");
+    //document.getElementById("tableroJuego").classList.remove("fadeOut2");
+    setTimeout(function () {
+        document.getElementById("principal").style.display = "unset";
+        //document.getElementById("tableroJuego").style.display = "unset";
+        document.getElementById("pantallaFail").style.display = "none";
+        document.getElementById("pantallaAgregarPalabra").style.display="none";
+    }, 500);
+}
+
+function verificarPalabraIngresada(){
+    var contenidoInput=document.querySelector(".input_text").value.toUpperCase();
+    /*console.log(contenidoInput);*/
+        if (contenidoInput.length>8) {
+            palabraInvalida=true;
+            return;
+        };
+        for(let i=0; i<contenidoInput.length;i++){
+            if(!charIsLetter(contenidoInput[i])){
+                
+                palabraInvalida=true;
+                break;
+            }else{
+                palabraInvalida=false;
+
+            }
+        }
+        if(palabraNueva&&!palabraInvalida){
+            palabras.push(contenidoInput);
+            console.log(palabras);
+        }
+ 
 }
